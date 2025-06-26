@@ -123,3 +123,12 @@ envFrom:
               operator: In
               values:
                 - cluster1-node01
+
+# Command and args example
+command: ["/bin/sh"]
+args: ["-c", "while true; do echo hello; sleep 10;done"]
+
+      command:
+        - "sh"
+        - "-c"
+        - "while true; do date >> /var/log/shared/date.log; sleep 1; done"

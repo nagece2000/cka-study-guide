@@ -105,24 +105,24 @@ helm search repo bitnami/nginx -l | head -n30
 
 # Environment Variables in YAML
 # Using Secret as Environment Variables
-envFrom:
-- secretRef:
-    name: db-secret-wl05
+        envFrom:
+        - secretRef:
+            name: db-secret-wl05
 
 # Using ConfigMap as Environment Variables
-envFrom:
-- configMapRef: 
-    name: webapp-wl10-config-map
+        envFrom:
+        - configMapRef: 
+            name: webapp-wl10-config-map
 
 # Set nodeaffinity
-nodeAffinity:
-  required:
-    nodeSelectorTerms:
-      - matchExpressions:
-          - key: kubernetes.io/hostname
-            operator: In
-            values:
-              - cluster1-node01
+        nodeAffinity:
+          required:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - cluster1-node01
 
 # Command and args example
 command: ["/bin/sh"]

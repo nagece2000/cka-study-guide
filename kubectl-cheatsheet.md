@@ -115,14 +115,14 @@ envFrom:
     name: webapp-wl10-config-map
 
 # Set nodeaffinity
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - cluster1-node01
+nodeAffinity:
+  required:
+    nodeSelectorTerms:
+      - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+              - cluster1-node01
 
 # Command and args example
 command: ["/bin/sh"]

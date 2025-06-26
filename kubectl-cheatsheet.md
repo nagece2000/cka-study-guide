@@ -16,6 +16,9 @@ kubectl config --kubeconfig <file> use-context newcontext
 # List all contexts
 kubectl config get-contexts
 
+# Extract cert in base64
+echo LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN2RE... | base64 -d
+
 # Pod Operations
 # Get pods with labels
 kubectl get pods --show-labels
@@ -132,3 +135,7 @@ args: ["-c", "while true; do echo hello; sleep 10;done"]
         - "sh"
         - "-c"
         - "while true; do date >> /var/log/shared/date.log; sleep 1; done"
+
+# Kustomization commands
+kubectl kustomize <dir>
+kubectl kustomize <dir> | kubectl apply -f -
